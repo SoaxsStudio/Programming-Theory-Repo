@@ -4,7 +4,26 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    public float moveSpeed = 6f;
+
+    private float m_moveSpeed = 6f;
+    public float moveSpeed
+    {
+        get { return m_moveSpeed; }
+
+        set
+        {
+            if (value < 0.0f)
+            {
+                Debug.Log("Move Speed can't be a negative number!");
+            }
+            else
+            {
+                m_moveSpeed = value;
+            }
+        }
+    }
+    
+    
     public float spawnRest = 2f;
     public Rigidbody rb;
     public GameObject currentAnimal;
@@ -31,7 +50,7 @@ public class Animal : MonoBehaviour
 
     public virtual void Move()
     {
-        rb.AddForce(GenerateDirection() * moveSpeed);
+        rb.AddForce(GenerateDirection() * m_moveSpeed);
     }
 
     Vector3 GenerateDirection()

@@ -12,4 +12,10 @@ public class Rabbit : Animal
         }
     }
 
+    public override void Breed()
+    {
+        Debug.Log("A Rabbit has been cloned!");
+        base.Breed();
+    }
+
 }

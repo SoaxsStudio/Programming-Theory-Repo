@@ -23,6 +23,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckSpawn();
+
+        if (!uiManager.gameActive)
+        {
+            EndGame();
+        }
+    }
+
+    private void CheckSpawn()
+    {
         if (CountAnimals() >= maxAnimals)
         {
             canSpawn = false;
@@ -30,11 +40,6 @@ public class GameManager : MonoBehaviour
         else
         {
             canSpawn = true;
-        }
-
-        if (!uiManager.gameActive)
-        {
-            EndGame();
         }
     }
 

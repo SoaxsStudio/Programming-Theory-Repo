@@ -12,4 +12,10 @@ public class Beaver : Animal
             Destroy(collision.gameObject);
         }
     }
+
+    public override void Breed()
+    {
+        Debug.Log("A Beaver has been cloned!");
+        base.Breed();
+    }
 }

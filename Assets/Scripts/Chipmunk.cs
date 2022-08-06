@@ -12,4 +12,9 @@ public class Chipmunk : Animal
         }
     }
 
+    public override void Breed()
+    {
+        Debug.Log("A Chipmunk has been cloned!");
+        base.Breed();
+    }
 }
